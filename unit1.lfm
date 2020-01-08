@@ -1,0 +1,136 @@
+object Form1: TForm1
+  Left = 248
+  Height = 342
+  Top = 110
+  Width = 418
+  Caption = 'Form1'
+  ClientHeight = 323
+  ClientWidth = 418
+  Menu = MainMenu1
+  LCLVersion = '2.0.6.0'
+  object Memo1: TMemo
+    Left = 0
+    Height = 225
+    Top = 98
+    Width = 418
+    Align = alClient
+    ScrollBars = ssAutoVertical
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 98
+    Top = 0
+    Width = 418
+    Align = alTop
+    ClientHeight = 98
+    ClientWidth = 418
+    TabOrder = 1
+    object Edit1: TEdit
+      Left = 64
+      Height = 21
+      Top = 16
+      Width = 128
+      TabOrder = 0
+    end
+    object Edit2: TEdit
+      Left = 264
+      Height = 21
+      Top = 16
+      Width = 128
+      TabOrder = 1
+    end
+    object Label1: TLabel
+      Left = 8
+      Height = 13
+      Top = 16
+      Width = 30
+      Caption = 'Логин'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 216
+      Height = 13
+      Top = 16
+      Width = 37
+      Caption = 'Пароль'
+      ParentColor = False
+    end
+    object Edit3: TEdit
+      Left = 64
+      Height = 21
+      Top = 57
+      Width = 128
+      TabOrder = 2
+    end
+    object Label3: TLabel
+      Left = 8
+      Height = 13
+      Top = 56
+      Width = 25
+      Caption = 'Кому'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 216
+      Height = 13
+      Top = 56
+      Width = 24
+      Caption = 'Тема'
+      ParentColor = False
+    end
+    object Edit4: TEdit
+      Left = 264
+      Height = 21
+      Top = 56
+      Width = 128
+      TabOrder = 3
+    end
+  end
+  object IdSMTP1: TIdSMTP
+    IOHandler = IdSSLIOHandlerSocketOpenSSL1
+    Port = 587
+    SASLMechanisms = <>
+    UseTLS = utUseExplicitTLS
+    left = 64
+    top = 110
+  end
+  object MainMenu1: TMainMenu
+    left = 128
+    top = 110
+    object MenuItem2: TMenuItem
+      Caption = 'Отправить'
+      OnClick = MenuItem2Click
+    end
+  end
+  object IdMessage1: TIdMessage
+    AttachmentEncoding = 'UUE'
+    BccList = <>
+    CCList = <>
+    Date = 0
+    Encoding = meDefault
+    FromList = <    
+      item
+      end>
+    Recipients = <>
+    ReplyTo = <>
+    ConvertPreamble = True
+    left = 197
+    top = 110
+  end
+  object IdSSLIOHandlerSocketOpenSSL1: TIdSSLIOHandlerSocketOpenSSL
+    Destination = ':587'
+    MaxLineAction = maException
+    Port = 587
+    DefaultPort = 0
+    SSLOptions.Mode = sslmUnassigned
+    SSLOptions.VerifyMode = []
+    SSLOptions.VerifyDepth = 0
+    left = 88
+    top = 191
+  end
+  object IdAntiFreeze1: TIdAntiFreeze
+    left = 216
+    top = 191
+  end
+end
