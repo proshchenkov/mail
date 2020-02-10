@@ -6,13 +6,14 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Menus,
-  ExtCtrls, IdHTTP, IdSMTP, IdMessage, IdSSLOpenSSL, IdAntiFreeze;
+  ExtCtrls, MaskEdit, IdHTTP, IdSMTP, IdMessage, IdSSLOpenSSL, IdAntiFreeze;
 
 type
 
   { TForm1 }
 
   TForm1 = class(TForm)
+    ComboBox1: TComboBox;
     Edit1: TEdit;
     Edit2: TEdit;
     Edit3: TEdit;
@@ -27,6 +28,7 @@ type
     Label4: TLabel;
     MainMenu1: TMainMenu;
     Memo1: TMemo;
+    MenuItem1: TMenuItem;
     MenuItem2: TMenuItem;
     Panel1: TPanel;
     procedure MenuItem2Click(Sender: TObject);
@@ -56,7 +58,7 @@ begin
 
   IdMessage1.Body.Text := UTF8Encode(Memo1.Text);
 
-  IdSMTP1.Host := 'smtp-relay.gmail.com';
+  IdSMTP1.Host := Combobox1.Text;
   IdSMTP1.Port := 25;
   IdSMTP1.Username := Edit1.Text;
   IdSMTP1.Password := Edit2.Text;

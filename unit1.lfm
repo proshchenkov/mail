@@ -3,88 +3,103 @@ object Form1: TForm1
   Height = 342
   Top = 110
   Width = 418
-  Caption = 'Form1'
-  ClientHeight = 323
+  Caption = 'Mail'
+  ClientHeight = 322
   ClientWidth = 418
   Menu = MainMenu1
   LCLVersion = '2.0.6.0'
   object Memo1: TMemo
     Left = 0
-    Height = 225
-    Top = 98
+    Height = 210
+    Top = 112
     Width = 418
     Align = alClient
     ScrollBars = ssAutoVertical
-    TabOrder = 0
+    TabOrder = 1
   end
   object Panel1: TPanel
     Left = 0
-    Height = 98
+    Height = 112
     Top = 0
     Width = 418
     Align = alTop
-    ClientHeight = 98
+    ClientHeight = 112
     ClientWidth = 418
-    TabOrder = 1
+    TabOrder = 0
     object Edit1: TEdit
       Left = 64
-      Height = 21
+      Height = 23
       Top = 16
       Width = 128
       TabOrder = 0
     end
-    object Edit2: TEdit
-      Left = 264
-      Height = 21
-      Top = 16
-      Width = 128
-      TabOrder = 1
-    end
     object Label1: TLabel
       Left = 8
-      Height = 13
+      Height = 15
       Top = 16
-      Width = 30
+      Width = 34
       Caption = 'Логин'
       ParentColor = False
     end
     object Label2: TLabel
       Left = 216
-      Height = 13
+      Height = 15
       Top = 16
-      Width = 37
+      Width = 42
       Caption = 'Пароль'
       ParentColor = False
     end
     object Edit3: TEdit
       Left = 64
-      Height = 21
-      Top = 57
+      Height = 23
+      Top = 80
       Width = 128
-      TabOrder = 2
+      TabOrder = 3
     end
     object Label3: TLabel
       Left = 8
-      Height = 13
-      Top = 56
-      Width = 25
+      Height = 15
+      Top = 80
+      Width = 29
       Caption = 'Кому'
       ParentColor = False
     end
     object Label4: TLabel
       Left = 216
-      Height = 13
-      Top = 56
-      Width = 24
+      Height = 15
+      Top = 80
+      Width = 27
       Caption = 'Тема'
       ParentColor = False
     end
     object Edit4: TEdit
       Left = 264
-      Height = 21
-      Top = 56
+      Height = 23
+      Top = 80
       Width = 128
-      TabOrder = 3
+      TabOrder = 4
+    end
+    object ComboBox1: TComboBox
+      Left = 64
+      Height = 23
+      Top = 48
+      Width = 128
+      ItemHeight = 15
+      Items.Strings = (
+        'smtp.yandex.ru'
+        'smtp.mail.ru'
+      )
+      TabOrder = 2
+      Text = 'SMTP'
+    end
+    object Edit2: TEdit
+      Left = 264
+      Height = 23
+      Top = 16
+      Width = 128
+      EchoMode = emPassword
+      PasswordChar = '*'
+      TabOrder = 1
     end
   end
   object IdSMTP1: TIdSMTP
@@ -92,15 +107,18 @@ object Form1: TForm1
     Port = 587
     SASLMechanisms = <>
     UseTLS = utUseExplicitTLS
-    left = 64
-    top = 110
+    left = 120
+    top = 168
   end
   object MainMenu1: TMainMenu
-    left = 128
-    top = 110
-    object MenuItem2: TMenuItem
-      Caption = 'Отправить'
-      OnClick = MenuItem2Click
+    left = 184
+    top = 168
+    object MenuItem1: TMenuItem
+      Caption = 'Письмо'
+      object MenuItem2: TMenuItem
+        Caption = 'Отправить'
+        OnClick = MenuItem2Click
+      end
     end
   end
   object IdMessage1: TIdMessage
@@ -115,8 +133,8 @@ object Form1: TForm1
     Recipients = <>
     ReplyTo = <>
     ConvertPreamble = True
-    left = 197
-    top = 110
+    left = 253
+    top = 168
   end
   object IdSSLIOHandlerSocketOpenSSL1: TIdSSLIOHandlerSocketOpenSSL
     Destination = ':587'
@@ -126,11 +144,11 @@ object Form1: TForm1
     SSLOptions.Mode = sslmUnassigned
     SSLOptions.VerifyMode = []
     SSLOptions.VerifyDepth = 0
-    left = 88
-    top = 191
+    left = 144
+    top = 249
   end
   object IdAntiFreeze1: TIdAntiFreeze
-    left = 216
-    top = 191
+    left = 272
+    top = 249
   end
 end
